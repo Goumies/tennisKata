@@ -16,7 +16,9 @@ Rules details:
 
 ·         Each time a player win a point, the Game score changes as follow:
 
-0 -> 15 -> 30 -> 40 -> Win game
+0 -> 15 -> 30 -> 40 -> Win game = 1 game
+
+1 set >= 6 games (2 games of difference)
 
 ---
 
