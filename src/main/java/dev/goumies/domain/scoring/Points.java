@@ -17,6 +17,10 @@ public class Points {
         value++;
     }
 
+    public boolean areGreaterThan(Points otherPoints) {
+        return value > otherPoints.value;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

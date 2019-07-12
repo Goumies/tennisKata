@@ -53,4 +53,8 @@ public class TennisGame {
     public String player2GameScore() {
         return gameScore.player2();
     }
+
+    public boolean hasPlayer1WithMaxPoints() {
+        return player1Points.areGreaterThan(player2Points);
+    }
 }

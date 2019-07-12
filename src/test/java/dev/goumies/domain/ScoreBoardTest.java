@@ -62,4 +62,16 @@ public class ScoreBoardTest {
         game.player1scorePoint();
         Assertions.assertThat(scoreBoard.gameScore()).isEqualTo(new String[]{"0", "0", "Player 1 wins the game"});
     }
+
+    @Test
+    public void with_player2_winning_the_game_should_return_0_0_as_both_players_scores_determined_winner() {
+        TennisGame game = new TennisGame();
+        ConsoleScoreBoard scoreBoard = new ConsoleScoreBoard(game);
+        game.start();
+        game.player2scorePoint();
+        game.player2scorePoint();
+        game.player2scorePoint();
+        game.player2scorePoint();
+        Assertions.assertThat(scoreBoard.gameScore()).isEqualTo(new String[]{"0", "0", "Player 2 wins the game"});
+    }
 }
