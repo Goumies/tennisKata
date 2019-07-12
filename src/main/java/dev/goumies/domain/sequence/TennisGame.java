@@ -11,8 +11,8 @@ public class TennisGame {
 
     private ArrayList<TennisGameState> state;
     private Points player1Points;
-    private GameScore gameScore;
     private Points player2Points;
+    private GameScore gameScore;
 
     public TennisGame() {
         this.state = new ArrayList<>(Collections.singletonList(TennisGameState.SETTING_UP));
@@ -30,6 +30,11 @@ public class TennisGame {
 
     public void player1scorePoint() {
         player1Points.increment();
+        saveGameScore();
+    }
+
+    public void player2scorePoint() {
+        player2Points.increment();
         saveGameScore();
     }
 

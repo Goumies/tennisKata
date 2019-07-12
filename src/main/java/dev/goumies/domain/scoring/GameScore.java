@@ -21,8 +21,8 @@ public class GameScore {
     }
 
     public String player2() {
-        Call player1GameScore = playersGameScores.get(1);
-        return player1GameScore.call;
+        Call player2GameScore = playersGameScores.get(1);
+        return player2GameScore.call;
     }
 
     public boolean contains(Call otherCall) {
