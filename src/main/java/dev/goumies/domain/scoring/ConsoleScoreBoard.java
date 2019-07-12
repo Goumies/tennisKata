@@ -16,7 +16,7 @@ public class ConsoleScoreBoard implements ScoreBoardFormat {
             return new String[]{""};
         }
         if(game.currentState().equals(TennisGameState.STARTED)) {
-            return new String[]{"GAME SCORE", "Player1", "0", "Player2", "0"};
+            return new String[]{"GAME SCORE", game.lastAction(), "Player 1", "0", "Player 2", "0"};
         }
         if(game.currentState().equals(TennisGameState.WON)) {
             return new String[]{game.player1GameScore(), game.player2GameScore(), WinnerDeterminator.forThis(game)};
@@ -26,6 +26,15 @@ public class ConsoleScoreBoard implements ScoreBoardFormat {
 
     @Override
     public String format(String[] gameScoreValues) {
-        return "";
+        if(gameScoreValues.length == 1)
+            return "";
+        return "                                             GAME SCORE                                             \n" +
+                "|                      |    "+ game.lastAction() +"Start the game    |\n" +
+                "|----------------------|----------------------|\n" +
+                "| Player 1             |          0           |\n" +
+                "| Player 2             |          0           |\n" +
+                "|----------------------|----------------------|\n" +
+                "|                      |                      |\n"
+                ;
     }
 }

@@ -6,6 +6,7 @@ import dev.goumies.domain.scoring.Points;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 public class TennisGame {
 
@@ -13,15 +14,18 @@ public class TennisGame {
     private Points player1Points;
     private Points player2Points;
     private GameScore gameScore;
+    private List<String> actions;
 
     public TennisGame() {
         this.state = new ArrayList<>(Collections.singletonList(TennisGameState.SETTING_UP));
         this.player1Points = Points.valueOf(0);
         this.player2Points = Points.valueOf(0);
+        this.actions = new ArrayList<>(Arrays.asList());
     }
 
     public void start() {
         state.replaceAll(tennisGameState -> TennisGameState.STARTED);
+        actions.add(TennisGameState.STARTED.action);
     }
 
     public TennisGameState currentState() {
@@ -56,5 +60,9 @@ public class TennisGame {
 
     public boolean hasPlayer1WithMaxPoints() {
         return player1Points.areGreaterThan(player2Points);
+    }
+
+    public String lastAction() {
+        return actions.get(actions.size()-1);
     }
 }
