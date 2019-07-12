@@ -3,7 +3,7 @@ package dev.goumies.domain.scoring;
 import dev.goumies.domain.sequence.TennisGame;
 import dev.goumies.domain.sequence.TennisGameState;
 
-public class ConsoleScoreBoard {
+public class ConsoleScoreBoard implements ScoreBoardFormat {
 
     private final TennisGame game;
 
@@ -22,5 +22,10 @@ public class ConsoleScoreBoard {
             return new String[]{game.player1GameScore(), game.player2GameScore(), WinnerDeterminator.forThis(game)};
         }
         return new String[]{game.player1GameScore(), game.player2GameScore()};
+    }
+
+    @Override
+    public String format(String[] gameScoreValues) {
+        return "";
     }
 }
