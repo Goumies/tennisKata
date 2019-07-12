@@ -18,7 +18,7 @@ public class ScoreBoardTest {
         TennisGame game = new TennisGame();
         ConsoleScoreBoard scoreBoard = new ConsoleScoreBoard(game);
         game.start();
-        Assertions.assertThat(scoreBoard.gameScore()).isEqualTo(new String[]{"GAME SCORE", "Player1", "0", "Player2", "0"});
+        Assertions.assertThat(scoreBoard.gameScore()).isEqualTo(new String[]{"GAME SCORE", "Start the game", "Player 1", "0", "Player 2", "0"});
     }
 
     @Test
