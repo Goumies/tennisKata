@@ -22,11 +22,21 @@ public class ScoreBoardTest {
     }
 
     @Test
-    public void with_player1_scoring_1_point_should_return_both_players_updated_scores() {
+    public void with_player1_scoring_1_point_should_return_15_0_as_both_players_scores() {
         TennisGame game = new TennisGame();
         ConsoleScoreBoard scoreBoard = new ConsoleScoreBoard(game);
         game.start();
         game.player1scorePoint();
         Assertions.assertThat(scoreBoard.gameScore()).isEqualTo(new String[]{"15", "0"});
+    }
+
+    @Test
+    public void with_player1_scoring_2_points_should_return_30_0_as_both_players_scores() {
+        TennisGame game = new TennisGame();
+        ConsoleScoreBoard scoreBoard = new ConsoleScoreBoard(game);
+        game.start();
+        game.player1scorePoint();
+        game.player1scorePoint();
+        Assertions.assertThat(scoreBoard.gameScore()).isEqualTo(new String[]{"30", "0"});
     }
 }
