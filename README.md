@@ -29,10 +29,10 @@ Write a program that take into account those elements for the scores board betwe
 
  
 
-*[ ] Players must be able to score points.
+*[x] Players must be able to score points.
 
 *[ ] The set must end with a winner.
 
 *[ ] After a game is won, the winning player must be determined.
 
-*[ ] We must be able to follow each player's score during the game.
+*[x] We must be able to follow each player's score during the game.
