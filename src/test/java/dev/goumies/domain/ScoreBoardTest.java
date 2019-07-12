@@ -22,7 +22,7 @@ public class ScoreBoardTest {
     }
 
     @Test
-    public void with_player1_scoring_1_point_should_return_both_players_scores() {
+    public void with_player1_scoring_1_point_should_return_both_players_updated_scores() {
         TennisGame game = new TennisGame();
         ConsoleScoreBoard scoreBoard = new ConsoleScoreBoard(game);
         game.start();

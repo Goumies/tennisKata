@@ -8,7 +8,6 @@ public class ConsoleScoreBoard {
     private final TennisGame game;
 
     public ConsoleScoreBoard(TennisGame game) {
-
         this.game = game;
     }
 
