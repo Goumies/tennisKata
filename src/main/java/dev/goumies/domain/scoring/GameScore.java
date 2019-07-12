@@ -28,7 +28,8 @@ public class GameScore {
     private enum Call {
         LOVE(Points.valueOf(0), "0"),
         FIFTEEN(Points.valueOf(1), "15"),
-        THIRTY(Points.valueOf(2), "30");
+        THIRTY(Points.valueOf(2), "30"),
+        FORTY(Points.valueOf(3), "40");
 
         private final Points pointsWon;
         private final String call;
