@@ -36,6 +36,9 @@ public class TennisGame {
     private void saveGameScore() {
         gameScore = GameScore.valueOf(Arrays.asList(player1Points, player2Points));
         state.replaceAll(tennisGameState -> TennisGameState.ON_GOING);
+
+        if(gameScore.contains(GameScore.Call.WIN))
+            state.replaceAll(tennisGameState -> TennisGameState.WON);
     }
 
     public String player1GameScore() {

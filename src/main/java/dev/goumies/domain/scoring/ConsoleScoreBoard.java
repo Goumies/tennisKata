@@ -18,6 +18,9 @@ public class ConsoleScoreBoard {
         if(game.currentState().equals(TennisGameState.STARTED)) {
             return new String[]{"GAME SCORE", "Player1", "0", "Player2", "0"};
         }
+        if(game.currentState().equals(TennisGameState.WON)) {
+            return new String[]{game.player1GameScore(), game.player2GameScore(), WinnerDeterminator.forThis(game)};
+        }
         return new String[]{game.player1GameScore(), game.player2GameScore()};
     }
 }

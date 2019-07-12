@@ -25,7 +25,12 @@ public class GameScore {
         return player1GameScore.call;
     }
 
-    private enum Call {
+    public boolean contains(Call otherCall) {
+        return playersGameScores.stream()
+                .anyMatch(call -> call.equals(otherCall));
+    }
+
+    public enum Call {
         LOVE(Points.valueOf(0), "0"),
         FIFTEEN(Points.valueOf(1), "15"),
         THIRTY(Points.valueOf(2), "30"),
