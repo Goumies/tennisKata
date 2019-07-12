@@ -50,4 +50,16 @@ public class ScoreBoardTest {
         game.player1scorePoint();
         Assertions.assertThat(scoreBoard.gameScore()).isEqualTo(new String[]{"40", "0"});
     }
+
+    @Test
+    public void with_player1_scoring_4_points_should_return_0_0_as_both_players_scores() {
+        TennisGame game = new TennisGame();
+        ConsoleScoreBoard scoreBoard = new ConsoleScoreBoard(game);
+        game.start();
+        game.player1scorePoint();
+        game.player1scorePoint();
+        game.player1scorePoint();
+        game.player1scorePoint();
+        Assertions.assertThat(scoreBoard.gameScore()).isEqualTo(new String[]{"0", "0"});
+    }
 }
